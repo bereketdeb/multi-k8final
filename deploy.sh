@@ -1,6 +1,11 @@
 docker build -t bereketdeb1/multi-client:latest -t bereketdeb1/multi-client:$SHA -f ./client/Dockerfile ./client 
 docker build -t bereketdeb1/multi-server:latest -t bereketdeb1/multi-server:$SHA -f ./server/Dockerfile ./server
 docker build -t bereketdeb1/multi-worker:latest -t bereketdeb1/multi-worker:$SHA -f ./worker/Dockerfile ./worker 
+
+docker tag multi-client bereketdeb1/multi-client
+docker tag multi-server bereketdeb1/multi-server
+docker tag multi-worker bereketdeb1/multi-worker
+
 docker push bereketdeb1/multi-client:latest
 docker push bereketdeb1/multi-server:latest
 docker push bereketdeb1/multi-worker:latest
