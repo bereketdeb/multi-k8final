@@ -7,6 +7,7 @@ docker push bereketdeb1/multi-worker:latest
 docker push bereketdeb1/multi-client:$SHA
 docker push bereketdeb1/multi-server:$SHA
 docker push bereketdeb1/multi-worker:$SHA
+
 kubectl apply -f k8
 kubectl set image deployments/server-deployment server=bereketdeb1/multi-server:$SHA
 kubectl set image deployments/client-deployment client=bereketdeb1/multi-client:$SHA
